@@ -5,6 +5,7 @@ use bevy::{
 use bytemuck::{Pod, Zeroable};
 
 use crate::rtmaterial::RTVolumeMaterial;
+use std::cmp;
 
 #[derive(Clone, Copy, Default, PartialEq, Eq, Debug)]
 pub struct Value([bool; 27]);
@@ -28,11 +29,14 @@ impl Value {
             if let Some((r0, r1)) = value.split_once('-') {
                 let r0 = r0.trim_end();
                 let r1 = r1.trim_start();
-                for i in r0.parse::<usize>().ok()?..=r1.parse::<usize>().ok()? {
+                let from = cmp::min(r0.parse::<usize>().ok()?, 26);
+                let to = cmp::min(r1.parse::<usize>().ok()?, 26);
+                for i in from..to {
                     *res.0.get_mut(26 - i)? = true;
                 }
             } else {
-                *res.0.get_mut(26 - value.parse::<usize>().ok()?)? = true;
+                let value = cmp::min(value.parse::<usize>().ok()?, 26);
+                *res.0.get_mut(26 - value)? = true;
             }
         }
         Some(res)
