@@ -294,15 +294,15 @@ pub struct RulePlugin;
 impl Plugin for RulePlugin {
     fn build(&self, app: &mut App) {
         app.insert_resource(Rule {
-            size: 243 * 3,
+            size: 100 * 3,
             spawn_mode: SpawnMode::MengerSponge,
-            survival: vec![4,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26].into(),
-            birth: vec![4, 18,19,20,21,22,23,24].into(),
-            states: 5,
+            survival: vec![4, 5, 6].into(),
+            birth: vec![5, 6, 7].into(),
+            states: 20,
             neighbor_mode: NeighborMode::Moore,
-            color_mode: ColorMode::StateLerp(Color::rgb_u8(94, 25, 146), Color::rgb_u8(12, 227, 227)),
+            color_mode: ColorMode::StateLerp(Color::rgb_u8(20, 150, 30), Color::rgb_u8(240, 255, 27)),
         })
-        .add_plugin(ExtractResourcePlugin::<Rule>::default())
-        .add_system(update_materials);
+            .add_plugin(ExtractResourcePlugin::<Rule>::default())
+            .add_system(update_materials);
     }
 }
