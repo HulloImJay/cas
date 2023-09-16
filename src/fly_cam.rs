@@ -40,7 +40,7 @@ fn toggle_grab_cursor(window: &mut Window) {
 
 /// Grabs the cursor when game first starts
 fn initial_grab_cursor(mut windows: ResMut<Windows>) {
-    toggle_grab_cursor(windows.get_primary_mut().unwrap());
+    //toggle_grab_cursor(windows.get_primary_mut().unwrap());
 }
 
 /// Spawns the `Camera3dBundle` to be controlled
