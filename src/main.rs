@@ -133,6 +133,8 @@ fn update_size(
                 height: rule.size,
                 depth_or_array_layers: rule.size,
             });
+            let total_size = rule.size * rule.size * rule.size;
+            println!("total size: {}", total_size);
         }
     }
 }

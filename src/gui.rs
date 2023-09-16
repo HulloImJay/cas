@@ -27,7 +27,7 @@ struct State {
     import: String,
     survival: String,
     birth: String,
-    // size: u32,
+    size: u32,
 }
 
 fn egui_system(
@@ -97,18 +97,15 @@ fn egui_system(
                 state.import.clear();
             }
 
-            // TODO: Fix resizing.
-            /*
             ui.label("Size");
             if state.size == 0 {
-                state.size = rule.size;
+                state.size = rule.size / 3;
             }
-            let res = ui.add(egui::Slider::new(&mut state.size, 2..=1024));
+            let res = ui.add(egui::Slider::new(&mut state.size, 2..=256));
             if res.lost_focus() || res.drag_released() {
-                rule.size = state.size;
+                rule.size = state.size * 3;
             }
             ui.end_row();
-            */
 
             ui.label("Survival");
             let survival = ui.text_edit_singleline(&mut state.survival);
