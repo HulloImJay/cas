@@ -54,7 +54,7 @@ pub struct UpdateTime(pub f64);
 
 impl Default for UpdateTime {
     fn default() -> Self {
-        UpdateTime(0.1)
+        UpdateTime(0.0167)
     }
 }
 
