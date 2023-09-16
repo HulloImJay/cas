@@ -1,15 +1,16 @@
-mod ca_compute;
-mod fly_cam;
-mod gui;
-mod rtmaterial;
-mod rule;
-
 use bevy::{diagnostic::FrameTimeDiagnosticsPlugin, prelude::*, render::render_resource::*};
+
 use ca_compute::{CAImage, CAPlugin};
 use fly_cam::{MovementSettings, PlayerPlugin};
 use gui::GuiPlugin;
 use rtmaterial::{RTMatPlugin, RTVolumeMaterial};
 use rule::{Rule, RulePlugin};
+
+mod ca_compute;
+mod fly_cam;
+mod gui;
+mod rtmaterial;
+mod rule;
 
 const WORKGROUP_SIZE: u32 = 9;
 

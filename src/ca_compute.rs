@@ -4,11 +4,11 @@ use bevy::{
     pbr::RenderMaterials,
     prelude::*,
     render::{
+        Extract,
         extract_resource::{ExtractResource, ExtractResourcePlugin},
         render_graph::{self, RenderGraph},
         render_resource::*,
-        renderer::{RenderContext, RenderDevice},
-        Extract, RenderApp, RenderStage,
+        RenderApp, renderer::{RenderContext, RenderDevice}, RenderStage,
     },
 };
 

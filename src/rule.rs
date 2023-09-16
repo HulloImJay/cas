@@ -1,3 +1,5 @@
+use std::cmp;
+
 use bevy::{
     prelude::*,
     render::extract_resource::{ExtractResource, ExtractResourcePlugin},
@@ -5,7 +7,6 @@ use bevy::{
 use bytemuck::{Pod, Zeroable};
 
 use crate::rtmaterial::RTVolumeMaterial;
-use std::cmp;
 
 #[derive(Clone, Copy, Default, PartialEq, Eq, Debug)]
 pub struct Value([bool; 27]);
@@ -226,6 +227,7 @@ impl SpawnModeKind {
         }
     }
 }
+
 #[repr(C)]
 #[derive(Clone, Copy, PartialEq, Default, Pod, Zeroable)]
 pub struct GPURule {

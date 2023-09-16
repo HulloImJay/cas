@@ -10,8 +10,8 @@ use bevy_egui::{
 use crate::{
     ca_compute::{ReInit, UpdateTime},
     fly_cam::MovementSettings,
-    rule::{ColorMode, ColorModeKind, NeighborMode, Rule, SpawnMode, SpawnModeKind, Value},
-    Meshes, START_SENSITIVITY, START_SPEED,
+    Meshes,
+    rule::{ColorMode, ColorModeKind, NeighborMode, Rule, SpawnMode, SpawnModeKind, Value}, START_SENSITIVITY, START_SPEED,
 };
 
 pub struct GuiPlugin;
